@@ -1,0 +1,36 @@
+{% extends 'auth-base.html' %}
+
+{% block auth-content %}
+<div class="auth-container">
+    {% for category, message in get_flashed_messages(with_categories=True) %}
+        <div class="msg-line {{ category }}-back">
+            <p class="{{ category }}-content">{message}</p>
+        </div>
+    {% endfor %}
+    <div class="auth-content">
+        <h3>Log in</h3>
+
+        <form method="POST" id="user_form">
+            {{ form.hidden_tag() }}
+
+            {% for field in form if field.widget.input_type != 'hidden' %}
+                {% for error in field.errors %}
+                <span class="err-icon">{{ error }}</span>
+                {% endfor %}
+                <div class="input-group">
+                    {{ field.label }}
+                    {{ field(placeholder=field.label.text) }}
+                </div>
+            {% endfor %}
+
+            <button class="btn btn-primary">Log in</button>
+        </form>
+    </div>
+</div>
+<div class="auth-footer">
+    <p>Already have an account? <a href="/login">Log in</a></p>
+</div>
+
+{% endblock %}
+        
+

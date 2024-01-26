@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>planplate</title>
+		<link rel="stylesheet" href="static/new.css" />
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Arvo:ital,wght@0,400;0,700;1,400;1,700&family=Poppins:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <script src="https://kit.fontawesome.com/735474be52.js" crossorigin="anonymous"></script>
+    </head>
+	<body>
+        <nav id="navbar">
+            <a id="home" href="/"><img id="home-logo" src="static/images/planplate_logo_L.png" alt="plan plate logo"/></a>
+        <div style="margin-bottom:-25px">
+                <a class="nav-item" href="/"><b>saved meals</b></a>
+                <a class="nav-item" href="/"><b>logout</b></a>
+                <a class="nav-btn"  href="/"><b>this week</b></a>
+            </div>
+        </nav>
+
+        <div class="search-container">
+            <form>
+                <input type="search" name="search-bar" id="search-bar" placeholder="Search for meals" />
+                <div style="position: relative; width: 300px;">
+                    <div id="suggestions">
+                        <ul></ul>
+                    </div>
+                </div>
+                <input type="submit" style="margin-top: 10px" class="btn btn-primary" value="Search" />
+            </form>
+        </div>
+        <script  src="/static/scripts.js"></script>
+	</body>
+</html>

@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block header %}
+    <nav id="navbar">
+        <a id="home" href="/"><img id="home-logo" src="static/images/planplate_logo_L.png" alt="plan plate logo"/></a>
+        <div style="margin-bottom:-25px">
+            <a class="nav-item" href="/"><b>saved meals</b></a>
+            <a class="nav-item" href="/"><b>profile</b></a>
+            <a class="nav-item" href="/"><b>logout</b></a>
+            <a class="nav-btn"  href="/"><b>this week</b></a>
+        </div>
+    </nav>
+{% endblock %}
+
+{% block content %}
+    <div>
+        {% for category, message in get_flashed_messages(with_categories=True) %}
+        <div class="msg-line {{ category }}-back">
+            <p class="{{ category }}-content">{message}</p>
+        </div>
+        {% endfor %}
+
+        {% block page-content %}
+        {% endblock %}
+    </div>
+{% endblock %}
